@@ -1,0 +1,173 @@
+body{
+	font-family: Roboto-Regular,'Helvetica Neue',Helvetica,Tahoma,Arial,Sans-serif;
+}
+
+.section-title{
+	border-bottom: 2px solid #007bff;
+	padding: 5px;
+}
+
+a{
+	color: black;	
+}
+h5{
+	font-size: 14px;
+	padding: 5px;
+}
+
+#kotak {
+	background-color: white;
+	border-radius: 5px;
+	margin-right: -5px;
+	margin-left: -5px;
+	padding: 10px;
+	box-shadow: 0 2px 5px #ABABAB;
+}
+
+.detail-title h4{
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.detail h4{
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.header{
+	background-color: blue;
+	background: linear-gradient(to right,#008B8B,#5F9EA0); /* Standard syntax */	
+}
+
+.footer{
+	background-color: blue;
+	background: linear-gradient(to right,lightgrey,white); /* Standard syntax */	
+}
+
+.logo{
+	margin: 10px;
+}
+.content{
+	padding: 20px;
+}
+
+.card-categories-li-content {
+	background: white;
+	box-shadow: 0px 0px 10px 1px #333333;
+}
+
+a:hover{
+	text-decoration: none;
+	color : red;
+}
+
+.card-categories-image-container {
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+}
+
+.card-categories-name {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.card{
+	width: 15rem;
+	margin: 10px;
+	height: 300px;
+}
+
+img{
+	width: 100%;
+}
+
+.produk {
+	padding: 10px;
+	width: 100%;
+	height: 50%;
+}
+
+.kotak-isi {
+	padding: 20px;
+}	
+
+.title-footer{
+	border-bottom: 1px solid gold;
+}
+
+.nav-link{
+	color: black;
+}
+
+input[type=text], input[type=password]{
+	border-radius: 0px;
+	size: 10px;
+	font-size: 14px;
+}
+
+textarea{
+	font-size: 14px;
+}
+
+.no-radius{
+	border-radius: 0px;
+}
+
+.text-footer{
+	font-size: 12px;
+}
+
+input[type=file] {
+	border-radius: 0px;
+	font-size: 14px;
+	padding: 3px;
+}
+
+#overlay-screen {
+    position: fixed;
+    z-index: 1999;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background: #fff;
+    opacity: 0.6;
+    filter: alpha(opacity=80);
+}
+
+#loading-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.text-error{
+	font-size: 12px;
+	color : maroon;
+}
+
+.kotak-error{
+	border : 1px solid maroon;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+	.fscreen {visibility: hidden;}
+}
+
+.card {
+    width: 22%;
+    margin: 16px;
+    height: 300px;
+}
+
+.table {
+	font-size: 12px;
+}
+
+.table th, .table td{
+	padding : 10px;
+	font-size: 12px;
+}
