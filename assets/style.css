@@ -15,9 +15,26 @@ h5{
 	padding: 5px;
 }
 
+h4{
+	font-size: 20px;
+	font-family: monospace;
+	font-weight: bold;
+}
+
+#nav-item {
+	border-bottom: 1px solid lightgrey;
+}
+
 #kotak {
 	background-color: white;
 	border-radius: 5px;
+	margin-right: -5px;
+	margin-left: -5px;
+	padding: 10px;
+	box-shadow: 0 2px 5px #ABABAB;
+}
+
+#row{
 	margin-right: -5px;
 	margin-left: -5px;
 	padding: 10px;
@@ -127,21 +144,21 @@ input[type=file] {
 }
 
 #overlay-screen {
-    position: fixed;
-    z-index: 1999;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    background: #fff;
-    opacity: 0.6;
-    filter: alpha(opacity=80);
+	position: fixed;
+	z-index: 1999;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	background: #fff;
+	opacity: 0.6;
+	filter: alpha(opacity=80);
 }
 
 #loading-screen {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
 }
 
 .text-error{
@@ -158,9 +175,9 @@ input[type=file] {
 }
 
 .card {
-    width: 22%;
-    margin: 16px;
-    height: 300px;
+	width: 22%;
+	margin: 16px;
+	height: 300px;
 }
 
 .table {
@@ -170,4 +187,59 @@ input[type=file] {
 .table th, .table td{
 	padding : 10px;
 	font-size: 12px;
+}
+
+a:hover{
+	color: #007bff;
+}
+
+/* Style the sidenav links and the dropdown button */
+a , .dropdown-btn {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 14px;
+	color: #818181;
+	display: block;
+	border: none;
+	background: none;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+	outline: none;
+	transition : all .2s ease-in-out;
+}
+
+.dropdown-btn:hover {
+	color: #007bff;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+	color: #007bff;
+	/*background-color: #007bff;*/
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+	display: none;
+	/*background-color: #262626;*/
+	padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+	float: right;
+	padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+}
+
+@media screen and (max-height: 450px;) {
+	a{
+		width: 100%
+	}
 }

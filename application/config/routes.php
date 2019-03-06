@@ -57,6 +57,7 @@ $route['admin/dashboard'] = 'controller_admin/dashboard';
 $route['admin/add_product'] = 'controller_admin/add_product';
 $route['admin/edit'] = 'controller_admin/edit';
 $route['produk'] = 'home/produk';
+$route['edit/(:num)'] = 'controller_function/update/$1';
 // $route['admin/update'] = 'controller_function/update/$1';
 // $route['detail-product'] = 'home/detail_product/$1';
 // $route['detail-barang'] = base_url();

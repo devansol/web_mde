@@ -19,6 +19,7 @@ function rupiah($angka){
 				<thead>
 					<th>No</th>
 					<th>Nama Barang</th>
+					<th>Harga Barang</th>
 					<th>Action</th>
 				</thead>
 			</table>

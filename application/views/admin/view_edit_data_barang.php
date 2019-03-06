@@ -18,7 +18,7 @@ if($this->session->userdata('login')) {
 						<h4><span>Edit Data</span></h4>
 					</div>
 					<div class="col-md-8" style="text-align: right;">
-						<button class="btn btn-danger no no-radius" style="color: white" id="btn-kembali"><span class="fa fa-angle-left"></span> Kembali</button>	
+						<button class="btn btn-danger no no-radius" style="color: white" id="btn-kembali-edit"><span class="fa fa-angle-left"></span> Kembali</button>	
 					</div>
 					
 				</div>

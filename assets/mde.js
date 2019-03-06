@@ -10,7 +10,22 @@ $(document).ready(function(){
 	console.log(base_url);
 	get_kode_barang();
 	get_produk();
+	var value =0 ;
+	// $(".dropwdown-menu").hide();
 
+	// $(".dropwdown-toggle").on('click', function(){
+	// 	if(value == 0){
+	// 		value = 1;
+	// 		$(".dropwdown-menu").show();
+	// 	}else{
+	// 		value = 0;
+	// 		$(".dropwdown-menu").hide();
+	// 	}
+	// });
+
+	$("#btn-kembali-edit").on('click', function(){
+		window.location.href=base_url+"admin/edit";
+	});
 
 	$('form#data').on('submit', function(e){
 		var nama_barang = $("#inp-nama-barang").val();
@@ -115,7 +130,7 @@ $(document).ready(function(){
 		var row = $(this).parents('tr');
 		var result = tbl_search_barang.row(row).data();
 		var id = result[3];
-		window.location.href = base_url + "home/detail_product/"+result[3];
+		window.location.href = base_url + "home/detail_product/"+result[4];
 		console.log(id);
 	});
 
@@ -135,7 +150,7 @@ $(document).ready(function(){
 		var row = $(this).parents('tr');
 		var result = tbl_edit_barang.row(row).data();
 		var id = result[3];
-		window.location.href = base_url + "controller_function/update/"+result[3];
+		window.location.href = base_url + "edit/"+result[3];
 		console.log(id);
 	});
 
@@ -231,6 +246,7 @@ $(document).ready(function(){
 						tbl_search_barang.row.add([
 							index+1,
 							this['nama_barang'],
+							'Rp. '+accounting.formatMoney(this['harga_barang'], '', 2, ',', '.'),
 							'<a href="#" id="btn-detail-search"><span class = "fa fa-eye"></span></a>',
 							this['id_barang']
 							]).draw(false);
@@ -240,7 +256,7 @@ $(document).ready(function(){
 						tbl_edit_barang.row.add([
 							index+1,
 							this['nama_barang'],
-							'<a href="#" id="btn-edit-search"><span class = "fa fa-edit"></span></a> <a href="#" id="btn-hapus-search"><span class = "fa fa-eraser"></span></a>',
+							'<a href="#" id="btn-edit-search"><span class = "fa fa-edit"></span> Edit</a> <a href="#" id="btn-hapus-search"><span class = "fa fa-eraser"></span> Hapus</a>',
 							this['id_barang']
 							]).draw(false);
 					});
