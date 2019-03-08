@@ -34,8 +34,8 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/accounting.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
-<!-- <script type="text/javascript" src="<?php echo base_url();?>assets/js/popper.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/popper.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
 <script src="<?php echo base_url();?>assets/datatables/jquery.dataTables.js"></script>
 <script src="<?php echo base_url();?>assets/datatables/dataTables.bootstrap4.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/mde.js"></script>

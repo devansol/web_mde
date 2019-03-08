@@ -126,5 +126,41 @@ Class Model extends CI_Model {
 		
 		return $output;
 	}
+
+	public function get_slide(){
+		$sql = "select * from slide order by id_slide";
+		$output = $this->db->query($sql);
+		// echo"<pre/>";
+		// var_dump(count($output->result()));
+		// exit();
+		return $output->result();
+	}
+
+	public function insert_slide($data){
+		$today = date('Y-m-d');
+		$param = array(
+			$data['slide1'],
+			$data['slide2'],
+			$data['slide3'],
+			$today
+		);
+		$sql = "insert into slide (slide1,slide2,slide3,create_date) values (?,?,?,?)";
+		$output = $this->db->query($sql, $param);
+		return $output;
+	}
+
+	public function update_slide($data){
+		$today = date('Y-m-d');
+		$param = array(
+			$data['slide1'],
+			$data['slide2'],
+			$data['slide3'],
+			$today,
+			$data['id_slide']
+		);
+		$sql = "update slide set slide1 = ? ,slide2 = ?, slide3 = ? , update_date = ? where id_slide = ?";
+		$output = $this->db->query($sql, $param);
+		return $output;
+	}
 }
 ?>

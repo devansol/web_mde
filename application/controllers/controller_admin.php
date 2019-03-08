@@ -37,6 +37,13 @@ class Controller_admin extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function slide(){
+		$this->load->view('admin/header');
+		$this->load->view('modal/view_modal_alert');
+		$this->load->view('admin/view_edit_slide');
+		$this->load->view('footer');
+	}
+
 	public function insert(){
 		// echo"window.location(".base_url().")";
 		$harga = str_replace(',','',$this->input->post('harga_barang'));
@@ -125,6 +132,49 @@ class Controller_admin extends CI_Controller {
 
 		$output = $this->model->update($data);
 		
+		$this->output->set_content_type('application/json');
+		$this->output->set_output(json_encode($output));
+	}
+
+	public function get_slide(){
+		$output = $this->model->get_slide();
+		$this->output->set_content_type('application/json');
+		$this->output->set_output(json_encode($output));
+	}
+
+	public function insert_slide(){
+		$data = array(
+			'slide1' => $_FILES['slide_1']['name'],
+			'slide2' => $_FILES['slide_2']['name'],
+			'slide3' => $_FILES['slide_3']['name']
+		);
+
+		$config['upload_path']          = './gambar/slide/';
+		$config['allowed_types']        = 'jpg|png';
+		$config['max_size']             = 10000;
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('slide_1') && !$this->upload->do_upload('slide_2') && !$this->upload->do_upload('slide_3')){
+			$output = array('error' => $this->upload->display_errors());
+		}else{
+			$output = array('upload_data' => $this->upload->data());
+			$result = $this->model->get_slide();
+		
+			if(count($result) == 0) {
+				$output = $this->model->insert_slide($data);
+			}else{
+				$data = array(
+					'slide1' => $_FILES['slide_1']['name'],
+					'slide2' => $_FILES['slide_2']['name'],
+					'slide3' => $_FILES['slide_3']['name'],
+					'id_slide' => $result[0]->id_slide
+				);
+				// echo"<pre/>";
+				// var_dump($data);
+				// exit();
+				$output = $this->model->update_slide($data);
+			}
+		}
 		$this->output->set_content_type('application/json');
 		$this->output->set_output(json_encode($output));
 	}

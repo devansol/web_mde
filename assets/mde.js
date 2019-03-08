@@ -10,6 +10,7 @@ $(document).ready(function(){
 	console.log(base_url);
 	get_kode_barang();
 	get_produk();
+	get_slide();
 	var value =0 ;
 	// $(".dropwdown-menu").hide();
 
@@ -27,6 +28,14 @@ $(document).ready(function(){
 		window.location.href=base_url+"admin/edit";
 	});
 
+	$('#btn-edit-slide').on('click', function(){
+		window.location.href = base_url +'admin/slide';
+	});
+
+	$('#btn-kembali-slide').on('click', function(){
+		window.location.href = base_url +'admin/dashboard';
+	});
+
 	$('form#data').on('submit', function(e){
 		var nama_barang = $("#inp-nama-barang").val();
 		var gambar = $('#inp-gambar-barang').val();
@@ -42,6 +51,24 @@ $(document).ready(function(){
 			var formData = new FormData(this);
 			alert_confirm('Anda yakin ingin menyimpan data ini ? ', function(){
 				upload(formData);
+			});
+		}
+	});
+
+	$('form#slide').on('submit', function(e){
+		var slide1 = $("#inp-slide-1").val();
+		var slide2 = $('#inp-slide-2').val();
+		var slide3 = $('#inp-slide-3').val();
+
+		if(slide1.length == 0 || slide2.length == 0 || slide3.length == 0){
+			$('.add').addClass('kotak-error');
+			alert('harap lengkapi form terlebih dahulu !');
+			return false;
+		}else{
+			e.preventDefault();    
+			var formData = new FormData(this);
+			alert_confirm('Anda yakin ingin menyimpan data ini ? ', function(){
+				upload_slide(formData);
 			});
 		}
 	});
@@ -164,6 +191,8 @@ $(document).ready(function(){
 		});
 	});
 
+
+	// ==================================================== FUNCTON AJAX =================================================//
 	function update(nama_barang,harga,ket,id){
 		$.ajax({
 			url: base_url + "controller_admin/update",
@@ -181,6 +210,74 @@ $(document).ready(function(){
 					if(response == true){
 						alert('Data berhasil di diubah', function(){
 							location.href = base_url + 'admin/edit';
+						});
+					}else{
+						alert(response['error']);
+					}
+				}catch(e){
+					alert(e.message);
+					console.log(e.message);
+				}	
+			},
+			error: function(response){
+				if(response['status'] == 500){
+					alert(response['statusText']);
+				}
+				console.log(response);
+			}
+		});
+	}
+
+	function get_slide(){
+		$.ajax({
+			url: base_url + "controller_admin/get_slide",
+			data : {
+
+			},
+			type: 'POST',
+			async : false,
+			success:function(response,status,error) {
+				try{
+					var data = [];
+					console.log(response);
+					data.push([
+						response[0]['slide1'],
+						response[0]['slide2'],
+						response[0]['slide3']
+					]);
+					console.log(data[0]);
+					for (var i = 0; i < data[0].length;i++) {
+						$("<div class='carousel-item active'><img class='slide' src="+ base_url+"gambar/slide/"+data[0][i]+" alt='Los Angeles' width='1100' height='400'></div>").appendTo('.carousel-inner');
+					}
+				}catch(e){
+					alert(e.message);
+					console.log(e.message);
+				}	
+			},
+			error: function(response){
+				if(response['status'] == 500){
+					alert(response['statusText']);
+				}
+				console.log(response);
+			}
+		});
+	}
+
+
+	function upload_slide(formData){
+		$.ajax({
+			url: base_url + "controller_admin/insert_slide",
+			type: 'POST',
+			data: formData,
+			cache: false,
+			contentType: false,
+			processData: false,
+			success:function(response,status,error) {
+				try{
+					console.log(response);
+					if(response == true){
+						alert('Data berhasil di simpan', function(){
+							location.reload('refresh');
 						});
 					}else{
 						alert(response['error']);

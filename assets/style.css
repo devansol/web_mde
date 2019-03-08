@@ -1,10 +1,19 @@
 body{
 	font-family: Roboto-Regular,'Helvetica Neue',Helvetica,Tahoma,Arial,Sans-serif;
+	background-color: rgb(240,240,240);
 }
 
 .section-title{
 	border-bottom: 2px solid #007bff;
 	padding: 5px;
+}
+
+header{
+	max-height: 50px;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	border-radius: 0px;
 }
 
 a{
@@ -26,6 +35,15 @@ h4{
 }
 
 #kotak {
+	background-color: white;
+	border-radius: 5px;
+	margin-right: -5px;
+	margin-left: -5px;
+	padding: 10px;
+	box-shadow: 0 2px 5px #ABABAB;
+}
+
+#kotak-product{
 	background-color: white;
 	border-radius: 5px;
 	margin-right: -5px;
@@ -170,76 +188,254 @@ input[type=file] {
 	border : 1px solid maroon;
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+/*@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
 	.fscreen {visibility: hidden;}
-}
+	}*/
 
-.card {
-	width: 22%;
-	margin: 16px;
-	height: 300px;
-}
-
-.table {
-	font-size: 12px;
-}
-
-.table th, .table td{
-	padding : 10px;
-	font-size: 12px;
-}
-
-a:hover{
-	color: #007bff;
-}
-
-/* Style the sidenav links and the dropdown button */
-a , .dropdown-btn {
-	padding: 6px 8px 6px 16px;
-	text-decoration: none;
-	font-size: 14px;
-	color: #818181;
-	display: block;
-	border: none;
-	background: none;
-	width: 100%;
-	text-align: left;
-	cursor: pointer;
-	outline: none;
-	transition : all .2s ease-in-out;
-}
-
-.dropdown-btn:hover {
-	color: #007bff;
-}
-
-/* Add an active class to the active dropdown button */
-.active {
-	color: #007bff;
-	/*background-color: #007bff;*/
-}
-
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-	display: none;
-	/*background-color: #262626;*/
-	padding-left: 8px;
-}
-
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-	float: right;
-	padding-right: 8px;
-}
-
-/* Some media queries for responsiveness */
-@media screen and (max-height: 450px) {
-	.sidenav {padding-top: 15px;}
-	.sidenav a {font-size: 18px;}
-}
-
-@media screen and (max-height: 450px;) {
-	a{
-		width: 100%
+	.card {
+		width: 22%;
+		margin: 16px;
+		height: 300px;
 	}
+
+	.table {
+		font-size: 12px;
+	}
+
+	.table th, .table td{
+		padding : 10px;
+		font-size: 12px;
+	}
+
+	a:hover{
+		color: #007bff;
+	}
+
+	/* Style the sidenav links and the dropdown button */
+	a , .dropdown-btn {
+		padding: 6px 8px 6px 16px;
+		text-decoration: none;
+		font-size: 14px;
+		color: #818181;
+		display: block;
+		border: none;
+		background: none;
+		width: 100%;
+		text-align: left;
+		cursor: pointer;
+		outline: none;
+		transition : all .2s ease-in-out;
+	}
+
+	.dropdown-btn:hover {
+		color: #007bff;
+	}
+
+	/* Add an active class to the active dropdown button */
+	.active {
+		color: #007bff;
+		/*background-color: #007bff;*/
+	}
+
+	/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+	.dropdown-container {
+		display: none;
+		/*background-color: #262626;*/
+		padding-left: 8px;
+	}
+
+	/* Optional: Style the caret down icon */
+	.fa-caret-down {
+		float: right;
+		padding-right: 8px;
+	}
+
+	.box-pesan{
+		margin-left: 0px;
+		margin-right: 0px;
+		max-height: 80px;
+	}
+
+	.box-category{
+		margin-right: -29px;
+		margin-left: 6px;
+	}
+
+	@media only screen and (max-width: 1199px) {
+		.box-pesan{
+			max-height: 100%;
+			max-width: 100%;
+			margin-top : 10px;
+		}
+
+		.box-category{
+			margin: auto;
+		}
+
+		#menu{
+			text-align: left;
+		}
+
+		img.slide{
+			height: 100%;
+		}
+
+		.kotak-slide{
+			padding: 0px;
+			margin-left: 0px;
+			margin-right: -32px;
+		}
+
+		#demo{
+			margin-left: 15px;
+			height: 50%
+		}
+
+		#kotak-product{
+			border-radius:0px;
+			margin-left: -9px;
+			margin-right: 0px;
+		}
+
+		.card{
+			width: 21%;
+			margin-left: 20px;
+		}
+
+		.row .category {
+			width: 100px;
+		}
+
+		.card .produk {
+			height: 50%;
+		}
+
+		.col-md-6 .logo {
+			text-align: left;
+		}
+
+		header {
+			max-height: 110px;
+		}
+	}
+
+
+	@media only screen and (max-width: 1024px) {
+		.box-pesan{
+			max-height: 100%;
+			max-width: 100%;
+			margin-top : 10px;
+		}
+
+		.box-category{
+			margin: auto;
+		}
+
+		#menu{
+			text-align: left;
+		}
+
+		img.slide{
+			height: 100%;
+		}
+
+		.kotak-slide{
+			padding: 0px;
+			margin-left: 0px;
+			margin-right: -32px;
+		}
+
+		#demo{
+			margin-left: 15px;
+			height: 100%
+		}
+
+		#kotak-product{
+			border-radius:0px;
+			margin-left: -9px;
+			margin-right: 0px;
+		}
+
+		.card{
+			width: 44%;
+		}
+
+		.row .category {
+			width: 100px;
+		}
+
+		.card .produk {
+			height: 42%
+		}
+
+		.col-md-6 .logo {
+			text-align: left;
+		}
+
+		header {
+			max-height: 110px;
+		}
+	}
+	/* Some media queries for responsiveness */
+	@media only screen and (max-width: 767px) {
+		.box-pesan{
+			max-height: 100%;
+			max-width: 100%;
+			margin-top : 50px;
+		}
+
+		.box-category{
+			margin: auto;
+		}
+
+		#logo {
+			text-align: center;
+			border-bottom: 1px solid grey;
+		}
+
+		#menu{
+			text-align: left;
+		}
+
+		img.slide{
+			height:100%;
+		}
+
+		.kotak-slide{
+			padding: 10px;
+			margin-left: 6px;
+			margin-right: -32px;
+		}
+
+		#demo{
+			margin-left: -21px;
+		}
+
+		#kotak-product{
+			border-radius:0px;
+			margin-left: -9px;
+			margin-right: 0px;
+		}
+
+		.card{
+			width: 100%;
+			height: 100%;
+		}
+
+		.card .produk {
+			height: 40%
+		}
+
+		.col-md-6 .logo {
+			text-align: left;
+		}
+
+		header {
+			max-height: 110px;
+		}
+	}
+
+	
+
 }
+

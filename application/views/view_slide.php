@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="row" style="margin-right: -29px;margin-left: 6px;">
+	<div class="row box-category">
 		<div class="col-md-3" id="row" style="background-color: white">
 			<div class="title-sidebar" style="border-bottom: 1px solid grey;">
 				<h4><span class="fa fa-angle-double-right" style="color: #007bff"> </span> CATEGORY</h4>
@@ -26,7 +26,7 @@
 			<!-- </div> -->
 		</div>
 
-		<div class="col-md-9">
+		<div class="col-md-9 kotak-slide">
 			<div id="demo" class="carousel slide" data-ride="carousel">
 
 				<!-- Indicators -->
@@ -35,18 +35,18 @@
 					<li data-target="#demo" data-slide-to="1"></li>
 					<li data-target="#demo" data-slide-to="2"></li>
 				</ul>
-
+				
 				<!-- The slideshow -->
 				<div class="carousel-inner">
-					<div class="carousel-item active">
+					<!-- <div class="carousel-item active">
 						<img src="<?php echo base_url() ;?>gambar/slide/slide.png" alt="Los Angeles" width="1100" height="400">
-					</div>
-					<div class="carousel-item">
+					</div> -->
+					<!-- <div class="carousel-item">
 						<img src="<?php echo base_url() ;?>gambar/slide/slide2.jpg" alt="Chicago" width="1100" height="400">
 					</div>
 					<div class="carousel-item">
 						<img src="<?php echo base_url() ;?>gambar/slide/slide3.png" alt="New York" width="1100" height="400">
-					</div>
+					</div> -->
 				</div>
 
 				<!-- Left and right controls -->
